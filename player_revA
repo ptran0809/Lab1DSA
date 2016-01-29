@@ -1,0 +1,74 @@
+import java.util.*;
+
+public class Player {
+	private int playerNum;
+	private ArrayList<String> frames;
+	private int playerScore;
+	public Player(int playerNum) {
+		setplayerNum(playerNum);
+		frames = new ArrayList<String>();
+		playerScore=0;
+	}
+
+	public int getplayerNum() {
+		return playerNum;
+	}
+
+	
+	public void setplayerNum(int playerNum) {
+		this.playerNum = playerNum;
+	}
+
+	
+	
+	public int getSpares() {
+		int numSpares = 0;
+		for(String frame : frames) {
+			if (frame.contains("/"))
+				numSpares ++;
+		}
+		return numSpares;
+	}
+	
+	public int getStrikes() {
+		int numStrikes = 0;
+		for(String frame : frames) {
+			if (frame.contains("X"))
+				numStrikes ++;
+		}
+		return numStrikes;
+	}
+	
+	private void addFrame(String frame) {
+		frames.add(frame);
+	}
+	
+	public String makeFrame(String[] data) {
+		for (String s : data){
+			addFrame(s);
+		}
+		if (data.length == 3){
+			return "[" + data[0] + "," + data[1] + "," + data[2] + "]";
+		}
+		else{
+			return "[" + data[0] + "," + data[1] + "]";
+		}
+		}
+	
+	public int calculateTotal (){
+		for(int i=(frames.size() - 1); i<=0; i--){
+			String first = frames.get(i + 1);
+			String second = frames.get(i + 2);
+			if (s.equals("X")){
+				if()
+			}
+		}
+	}
+	
+	public void setplayerScore(int s){
+		playerScore = s;
+	}
+	public int getplayerScore(){
+		return playerScore;
+	}
+}
